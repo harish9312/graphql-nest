@@ -3,9 +3,23 @@
 # !!!   DO NOT MODIFY THIS FILE BY YOURSELF   !!!
 # -----------------------------------------------
 
+type Mutation {
+  addUser(newUserData: NewUserInput!): User!
+}
+
+input NewUserInput {
+  name: String!
+  username: String!
+  email: String!
+}
+
 type Query {
   user(id: String!): User!
   allUsers: [User!]!
+}
+
+type Subscription {
+  userAdded: User!
 }
 
 type User {
